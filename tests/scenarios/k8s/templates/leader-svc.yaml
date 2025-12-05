@@ -10,11 +10,6 @@ metadata:
 spec:
   selector:
     role: leader
-  # clusterIP: None
-  # type: ClusterIP
-  ports:
-    - name: rdma
-      port: 18515
-      targetPort: 18515
-      protocol: TCP
-{{- end }}
+  clusterIP: None
+  type: ClusterIP
+  {{- end }}
