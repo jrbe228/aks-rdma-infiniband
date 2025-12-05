@@ -17,6 +17,9 @@ spec:
       labels:
         role: leader
     spec:
+      hostNetwork: true
+      securityContext:
+        privileged: true
       containers:
       - name: runner
         image: {{ .Values.job.image }}
