@@ -90,19 +90,19 @@ if [[ "$1" == "server" ]]; then
 
         echo -e "\nStarting RDMA Server 'ibv_rc_pingpong' for $IB_DEVICE (Port $PORT)...\n"
         # Run RDMA ping-pong test
-        ibv_rc_pingpong --ib-dev "$IB_DEVICE"
+        ibv_rc_pingpong --ib-dev -s -p $PORT -d "$IB_DEVICE"
 
         echo -e "\nStarting RDMA Server 'ib_read_lat' for $IB_DEVICE (Port $PORT)...\n"
         # Run RDMA latency test
-        ib_read_lat --ib-dev "$IB_DEVICE"
+        ib_read_lat --ib-dev -s -p $PORT -d "$IB_DEVICE"
 
         echo -e "\nStarting RDMA Server 'ib_read_bw' for $IB_DEVICE (Port $PORT)...\n"
         # Run RDMA bandwidth test
-        ib_read_bw --ib-dev "$IB_DEVICE" -a -F --report_gbits -q 1
+        ib_read_bw --ib-dev -s -p $PORT -d "$IB_DEVICE" -a -F --report_gbits -q 1
 
         echo -e "\nStarting RDMA Server 'ib_write_bw' for $IB_DEVICE (Port $PORT)...\n"
         # Run RDMA write bandwidth test
-        ib_write_bw --ib-dev "$IB_DEVICE" -a -F --report_gbits -q 1
+        ib_write_bw --ib-dev -s -p $PORT -d "$IB_DEVICE" -a -F --report_gbits -q 1
     done
 
 # Client Mode
