@@ -13,11 +13,11 @@ job:
 #   rdma/ib: 8
 #   rdma/shared_ib: 1
 
-# securityContext:
-#   privileged: false
-#   capabilities:
-#     add:
-#     - IPC_LOCK
+securityContext:
+  privileged: false
+  capabilities:
+    add:
+    - IPC_LOCK
 
 ipoib: false
 
