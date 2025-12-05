@@ -14,7 +14,7 @@ job:
 #   rdma/shared_ib: 1
 
 securityContext:
-  privileged: false
+  privileged: true
   capabilities:
     add:
     - IPC_LOCK
